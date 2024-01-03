@@ -21,7 +21,7 @@
    * `Use case` : `Glue`
    * Click `Next`.
    * Pada window `Add permissions`, search `S3`, checklist `AmazonS3FullAccess`, click `Next`.
-   * Pada window `Name, review, and create`, beri nama dibagian `Role name`, contoh `danu-shop-glue-s3-role`, kemudian click `Create role`.
+   * Pada window `Name, review, and create`, beri nama dibagian `Role name`, contoh `rmt-001-danu-shop-glue-s3-role`, kemudian click `Create role`.
    * Click `View` di notifikasi saat rolenya sudah tercipta. Akan muncul window mengenai jenis rolenya apa saja.
 
 5. Role yang baru terbentuk adalah Glue ke S3. Tambahkan permission untuk S3 ke Glue dengan cara :
@@ -30,7 +30,7 @@
    * Search `glue` dan pilih `AWSGlueServiceRole`.
    * Click `Add permissions`.
 
-6. Pada role yang sudah tercipta (`danu-shop-glue-s3-role`) akan terdapat 2 role : `AmazonS3FullAccess` dan `AWSGlueServiceRole`.
+6. Pada role yang sudah tercipta (`rmt-001-danu-shop-glue-s3-role`) akan terdapat 2 role : `AmazonS3FullAccess` dan `AWSGlueServiceRole`.
 
 ---
 # C. Download and install AWS CLI
@@ -52,7 +52,7 @@ Buka Terminal/Command Prompt, lalu change directory ke path dimana repository in
 ## D.1 - Create a bucket
 ```
 Syntax  : $ aws s3 mb s3://<BUCKET-NAME>
-Example : $ aws s3 mb s3://danu-shop-bucket
+Example : $ aws s3 mb s3://rmt-001-danu-shop-bucket
 ```
 
 ## D.2 - Upload datasets into bucket
@@ -65,9 +65,9 @@ aws s3 cp dataset/data_products.csv s3://<BUCKET-NAME>/data/data_products/data_p
 
 Example
 ```
-aws s3 cp dataset/data_orders.csv s3://danu-shop-bucket/data/data_orders/data_orders.csv 
-aws s3 cp dataset/data_details.csv s3://danu-shop-bucket/data/data_details/data_details.csv
-aws s3 cp dataset/data_products.csv s3://danu-shop-bucket/data/data_products/data_products.csv
+aws s3 cp dataset/data_orders.csv s3://rmt-001-danu-shop-bucket/data/data_orders/data_orders.csv 
+aws s3 cp dataset/data_details.csv s3://rmt-001-danu-shop-bucket/data/data_details/data_details.csv
+aws s3 cp dataset/data_products.csv s3://rmt-001-danu-shop-bucket/data/data_products/data_products.csv
 ```
 
 ---
@@ -97,9 +97,9 @@ Example
 ```
 aws glue create-database --database-input '{"Name":"danu-shop-catalog-db"}'
 
-aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_orders","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://danu-shop-bucket/data/data_orders/"}]}}'
+aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_orders","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://rmt-001-danu-shop-bucket/data/data_orders/"}]}}'
 
-aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_details","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://danu-shop-bucket/data/data_details/"}]}}'
+aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_details","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://rmt-001-danu-shop-bucket/data/data_details/"}]}}'
 
-aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_products","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://danu-shop-bucket/data/data_products/"}]}}'
+aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_products","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://rmt-001-danu-shop-bucket/data/data_products/"}]}}'
 ```

@@ -84,22 +84,12 @@ aws s3 cp dataset/data_products.csv s3://rmt-001-danu-shop-bucket/data/data_prod
 ## E.2 - Run AWS Glue Crawler
 Syntax
 ```
-aws glue create-database --database-input '{"Name":"<CATALOG-DB-NAME>"}'
+aws glue create-database --database-input "{\"Name\": \"<CATALOG-DB-NAME>\"}"
 
-aws glue create-crawler --cli-input-json '{"Name": "<CRAWLER-NAME>","Role": "<YOUR-ARN>","DatabaseName": "<CATALOG-DB-NAME>","Targets": {"S3Targets": [{"Path": "s3://<BUCKET-NAME>/data/data_orders/"}]}}'
+aws glue create-crawler --cli-input-json "{\"Name\": \"<CRAWLER-NAME>\", \"Role\": \"<YOUR-ARN>\", \"DatabaseName\": \"<CATALOG-DB-NAME>\", \"Targets\": {\"S3Targets\": [{\"Path\": \"s3://<BUCKET-NAME>/data/data_orders/\"}]}}"
 
-aws glue create-crawler --cli-input-json '{"Name": "<CRAWLER-NAME>","Role": "<YOUR-ARN>","DatabaseName": "<CATALOG-DB-NAME>","Targets": {"S3Targets": [{"Path": "s3://<BUCKET-NAME>/data/data_details/"}]}}'
+aws glue create-crawler --cli-input-json "{\"Name\": \"<CRAWLER-NAME>\", \"Role\": \"<YOUR-ARN>\", \"DatabaseName\": \"<CATALOG-DB-NAME>\", \"Targets\": {\"S3Targets\": [{\"Path\": \"s3://<BUCKET-NAME>/data/data_details/\"}]}}"
 
-aws glue create-crawler --cli-input-json '{"Name": "<CRAWLER-NAME>","Role": "<YOUR-ARN>","DatabaseName": "<CATALOG-DB-NAME>","Targets": {"S3Targets": [{"Path": "s3://<BUCKET-NAME>/data/data_products/"}]}}'
-```
+aws glue create-crawler --cli-input-json "{\"Name\": \"<CRAWLER-NAME>\", \"Role\": \"<YOUR-ARN>\", \"DatabaseName\": \"<CATALOG-DB-NAME>\", \"Targets\": {\"S3Targets\": [{\"Path\": \"s3://<BUCKET-NAME>/data/data_products/\"}]}}"
 
-Example
-```
-aws glue create-database --database-input '{"Name":"danu-shop-catalog-db"}'
-
-aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_orders","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://rmt-001-danu-shop-bucket/data/data_orders/"}]}}'
-
-aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_details","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://rmt-001-danu-shop-bucket/data/data_details/"}]}}'
-
-aws glue create-crawler --cli-input-json '{"Name": "crawler_danu_products","Role": "<YOUR-ARN>","DatabaseName": "danu-shop-catalog-db","Targets": {"S3Targets": [{"Path": "s3://rmt-001-danu-shop-bucket/data/data_products/"}]}}'
 ```

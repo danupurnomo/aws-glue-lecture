@@ -87,9 +87,10 @@ aws s3 cp dataset/data_products.csv s3://rmt-001-danu-shop-bucket/data/data_prod
 
 2. In `Access management`, click `Roles`.
 
-3. Click pada nama role yang baru saja dibuat berdasarkan langkah **B. Create an IAM Role**.
+3. Click pada nama role yang baru saja dibuat berdasarkan langkah **A. Create an IAM Role**.
 
 4. Copy `ARN` yang tertampil.
+   ![plot](role.png)
 
 ## E.2 - Run AWS Glue Crawler
 Syntax

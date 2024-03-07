@@ -24,6 +24,7 @@
 6. Click pada Role yang baru saja tercipta.
 
 7. Anda akan membutuhkan ARN untuk proses berikutnya. *(Saran : Biarkan saja tab ini terbuka)*
+   ![plot](role.png)
 
 ---
 # B. Get Access Key
@@ -33,27 +34,30 @@
 
 3. Download file CSV hasil dari pembuatan Access Keys.
 
+4. Setelah `Access keys`, terbuat Anda akan memerlukan `Access key` dan `Secret acess key` pada proses selanjutnya. *(Saran : Biarkan saja tab ini terbuka)*
+   ![plot](access-key.png)
+
 ---
 # C. Download and install AWS CLI
 1. Download [AWS CLI](https://aws.amazon.com/cli/).
 
-2. Open Terminal dan ketikkan `$ aws`. Akan muncul beberapa command yang menandakan AWS CLI sudah terinstall.
+2. Buka Terminal/Command Prompt, lalu change directory ke path dimana repository ini berada.
 
-3. Konfigurasi terminal/command prompt:
+3. Ketikkan `$ aws` pada Command Prompt atau Terminal. Akan muncul beberapa command yang menandakan AWS CLI sudah terinstall.
+
+4. Konfigurasi terminal/command prompt:
    * Ketikkan
      ```bash
      aws configure
      ```
    * Lalu masukkan :
-     + `AWS Access Key ID` : <sesuai dengan >,
-     + `AWS Secret Access Key` : <sesuai dengan >
+     + `AWS Access Key ID` : *<sesuai dengan `Access key` dari proses B>*
+     + `AWS Secret Access Key` : *<sesuai dengan `Secret access key` dari proses B>*
      + `Default region name` : isikan saja `us-east-1`
      + 'Default output format` : 'json'
 
 ---
 # D. Create AWS S3 bucket and upload files into AWS S3 bucket
-
-Buka Terminal/Command Prompt, lalu change directory ke path dimana repository ini berada.
 
 ## D.1 - Create a bucket
 ```sh

@@ -1,15 +1,7 @@
 # AWS - Glue Lecture
 
 ---
-# A. Get Access Key
-1. Click profile, kemudian pilih `Security credentials`.
-
-2. Cek bagian `Access keys`. Jika belum ada, buat dahulu Access keys.
-
-3. Download file CSV hasil dari pembuatan Access Keys.
-
----
-# B. Create an IAM Role
+# A. Create an IAM Role
 1. Find and open `IAM` menu.
 
 2. In `Access management`, click `Roles`.
@@ -29,6 +21,18 @@
 
 5. Pada role yang sudah tercipta (`rmt-001-danu-shop-glue-s3-role`) akan terdapat 2 role : `AmazonS3FullAccess` dan `AWSGlueServiceRole`.
 
+6. Click pada Role yang baru saja tercipta.
+
+7. Anda akan membutuhkan ARN untuk proses berikutnya. *(Saran : Biarkan saja tab ini terbuka)*
+
+---
+# B. Get Access Key
+1. Click profile, kemudian pilih `Security credentials`.
+
+2. Cek bagian `Access keys`. Jika belum ada, buat dahulu Access keys.
+
+3. Download file CSV hasil dari pembuatan Access Keys.
+
 ---
 # C. Download and install AWS CLI
 1. Download [AWS CLI](https://aws.amazon.com/cli/).
@@ -38,11 +42,13 @@
 3. Konfigurasi terminal/command prompt:
    * Ketikkan
      ```bash
-     $ aws configure
+     aws configure
      ```
-   * Lalu masukkan `AWS Access Key ID`, `AWS Secret Access Key`.
-   * Untuk `Default region name` bebas, atau isikan saja `us-east-1`.
-   * Untuk `Default output format [None]` skip saja (tekan enter).
+   * Lalu masukkan :
+     + `AWS Access Key ID` : <sesuai dengan >,
+     + `AWS Secret Access Key` : <sesuai dengan >
+     + `Default region name` : isikan saja `us-east-1`
+     + 'Default output format` : 'json'
 
 ---
 # D. Create AWS S3 bucket and upload files into AWS S3 bucket

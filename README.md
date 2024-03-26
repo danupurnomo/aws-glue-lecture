@@ -54,7 +54,7 @@
      + `AWS Access Key ID` : *<sesuai dengan `Access key` dari proses B>*
      + `AWS Secret Access Key` : *<sesuai dengan `Secret access key` dari proses B>*
      + `Default region name` : isikan saja `us-east-1`
-     + 'Default output format` : 'json'
+     + `Default output format` : `json`
 
 ---
 # D. Create AWS S3 bucket and upload files into AWS S3 bucket
